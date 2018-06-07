@@ -5,4 +5,6 @@ function CadastrarDespesa(){
     
     console.log("Descrição:",description,"\nValor Total:",amount,"\nData:",dateAdd);
 
+    var database = firebase.database();
+    console.log(database);
 }
