@@ -1,0 +1,1 @@
+console.log("Acessou o arquivo App.js");
