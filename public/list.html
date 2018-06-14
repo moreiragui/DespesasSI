@@ -6,15 +6,16 @@
         <script src="assets/js/bootstrap.min.js"></script>
         <link rel="stylesheet" href="assets/css/bootstrap.min.css" type="text/css">
 
-        <link rel="stylesheet" href="assets/css/estilo.css" type="text/css">
+        <title>LISTAGEM</title>
 
-        <title>HOME - CADASTRAR</title>
+        <link rel="stylesheet" href="assets/css/estilo.css" type="text/css">
 
         <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
         <script src="assets/js/config.js"></script>
+        <script src="assets/js/AppList.js"></script>
 
     </head>
-    <body>
+    <body onload="RetornarDespesas()">
         <div class="container-fluid">
                 <nav class="navbar navbar-expand-lg navbar-light bg-light">
                   <a class="navbar-brand" href="index.html"><img src="imagens\logocanto.png" width="200px"></a>
@@ -24,13 +25,13 @@
                       
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                           <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
+                            <li class="nav-item">
                               <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                               <a class="nav-link" href="add.html">Add</a>
                             </li>
-                            <li class="nav-item">
+                            <li class="nav-item active">
                               <a class="nav-link" href="list.html">List</a>
                             </li>
                             <li class="nav-item">
@@ -43,17 +44,20 @@
                           </form>
                         </div>
                       </nav>
-                      <div>
-                        <div class="card" id="card-center">
-                          <h5 class="card-header">CADASTRO MASSA PRA CARAMBA PRA ADICIONAR DESPESAS</h5>
-                          <div class="card-body">
-                              <img class="card-img-top" src="imagens/back_card.jpg" alt="Card image cap">
-                            <h5 class="card-title" id="text-cadastro">CADASTRO TOPPER - (VAI NEYMAR)</h5>
-                            <p class="card-text">Cadastro massa top pra caramba que visa cadastrar algumas despesas tops que foram gastas por alguns clientes fodas pra caramba.</p>
-                            <center><a href="add.html" class="btn btn-primary">AICIONAR DESPESAS</a></center>
-                          </div>
-                        </div>
+                      <div id="table-base">                          
+                          <table class="table" id="tbResultado">
+                            <thead class="thead-light">
+                              <tr>
+                                <th scope="col"><b>ID</b></th>
+                                <th scope="col"><b>DESCRIÇÃO</b></th>
+                                <th scope="col"><b>VALOR</b></th>
+                                <th scope="col"><b>DATA</b></th>
+                              </tr>
+                            </thead>
+                            
+                          </table>
                       </div>
                     </div>
+                    
     </body>
 </html>
