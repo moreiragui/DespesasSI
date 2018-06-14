@@ -6,5 +6,5 @@
     projectId: "projetominhasdespesastop-aa329",
     storageBucket: "projetominhasdespesastop-aa329.appspot.com",
     messagingSenderId: "405409795255"
-};
-firebase.initializeApp(config);
+  };
+  const db = firebase.initializeApp(config);
