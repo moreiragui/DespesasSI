@@ -1,9 +1,15 @@
 function RetornarDespesas(){
-    var tabela = document.getElementById('tbResultado');
+    var lista = document.getElementById('listaResultados');
     var list = db.database()
-        .ref('minhasdespesas')
-        .on('value',function(res){
-            console.log(res.val());
+    .ref('minhasdespesas').on('value',function(res){
+        lista.innerHTML = '';
+        res.forEach(function(item){
+            var li = document.createElement('li');
+            li.classList.add('list-group-item');
+
+            li.appendChild(document.createTextNode(item.val().description+'-'+item.val().dateAdd+'-'+item.val().amount))
+
+            lista.appendChild(li);
         })
-    console.log(tabela);
+    })
 }

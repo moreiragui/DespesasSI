@@ -6,7 +6,7 @@ function CadastrarDespesa(){
     console.log("Descrição",description,"Amount",amount,"DateAdd",dateAdd);   
     //var database = firebase.database();
     
-    var despesas = {Descrição:description,Valor:amount,Data_da_Despesa:dateAdd};
+    var despesas = {description:description,amount:amount,dateAdd:dateAdd};
     db.database().ref('minhasdespesas').push(despesas);    
     
 
