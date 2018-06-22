@@ -15,6 +15,7 @@ function RetornarDespesas(){
                 <td>`+item.val().description+`</td>
                 <td>`+item.val().amount+`</td>
                 <td>`+item.val().dateAdd+`</td>
+                <td>``</td>
                 </tr>`;
                 somaTotal+= Number(item.val().amount);
             })
@@ -26,4 +27,15 @@ function RetornarDespesas(){
             $("#tbResultado").append(conteudo);
            
         });
+}
+
+function deleteRegister(id){
+    var url = "minhasdespesas"-id;
+    $.ajax({
+        url:url,
+        method:"DELETE"
+        
+    }).done(function(msg){
+        alert("Foi excluído");
+    })
 }
