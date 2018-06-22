@@ -1,15 +1,29 @@
 function RetornarDespesas(){
-    var lista = document.getElementById('listaResultados');
-    var list = db.database()
-    .ref('minhasdespesas').on('value',function(res){
-        lista.innerHTML = '';
-        res.forEach(function(item){
-            var li = document.createElement('li');
-            li.classList.add('list-group-item');
+    var lista= document.getElementById('listaResultados'); 
+    var somaTotal = 0; 
+    
+    var conteudo = `<tbody>`;
+    
+    var list  = db.database()
+        .ref('minhasdespesas').on('value',function(res){
+            var i=0;
+            res.forEach(function(item){
+                
+                console.log(item.val());
+                conteudo += `<tr>
+                <td>`+item.key+`</td>
+                <td>`+item.val().description+`</td>
+                <td>`+item.val().amount+`</td>
+                <td>`+item.val().dateAdd+`</td>
+                </tr>`;
+                somaTotal+= Number(item.val().amount);
+            })
+            conteudo +=`</tbody>`;
+            document.getElementById("somaTotal")
+                .innerHTML += ' '+somaTotal;
 
-            li.appendChild(document.createTextNode(item.val().description+'-'+item.val().dateAdd+'-'+item.val().amount))
 
-            lista.appendChild(li);
-        })
-    })
+            $("#tbResultado").append(conteudo);
+           
+        });
 }

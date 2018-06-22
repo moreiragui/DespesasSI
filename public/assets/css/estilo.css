@@ -23,3 +23,14 @@ body{
 #text-cadastro{
     margin-top: 2%;
 }
+
+#somaTotal{
+    margin-top: 2%;
+    margin-left: 42%;
+    margin-right: 42%;
+}
+
+#divtableresultado{
+    margin-left: 3%;
+    margin-right: 3%;
+}

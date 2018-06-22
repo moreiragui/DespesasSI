@@ -10,9 +10,11 @@
 
         <link rel="stylesheet" href="assets/css/estilo.css" type="text/css">
 
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
         <script src="assets/js/config.js"></script>
         <script src="assets/js/AppList.js"></script>
+        <script src="assets/js/bootstrap.js"></script>
 
     </head>
     <body onload="RetornarDespesas()">
@@ -38,29 +40,21 @@
                               <a class="nav-link" href="profile.html">Profile</a>
                             </li>
                           </ul>
-                          <form class="form-inline my-2 my-lg-0">
-                            <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-                            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-                          </form>
                         </div>
                       </nav>
-                 <!--     <div id="table-base">                          
-                          <table class="table" id="tbResultado">
-                            <thead class="thead-light">
-                              <tr>
-                                <th scope="col"><b>ID</b></th>
-                                <th scope="col"><b>DESCRIÇÃO</b></th>
-                                <th scope="col"><b>VALOR</b></th>
-                                <th scope="col"><b>DATA</b></th>
-                              </tr>
-                            </thead>
-                            
-                          </table>
-                      </div> -->
-                      <ul id="listaResultados">
-
-
-                      </ul>
+                      <p class="alert alert-primary" id="somaTotal">Total: R$</p>
+                      <div id="divtableresultado">
+                        <table class="table table-bordered" id="tbResultado">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">DATA KEY</th>
+                              <th scope="col">DESCRIÇÃO</th>
+                              <th scope="col">VALOR</th>
+                              <th scope="col">DATA</th>
+                            </tr>
+                          </thead>          
+                        </table> 
+                      </div>
                     </div>
                     
     </body>
