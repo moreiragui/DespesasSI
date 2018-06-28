@@ -15,7 +15,7 @@ function RetornarDespesas(){
                 <td>`+item.val().description+`</td>
                 <td>`+item.val().amount+`</td>
                 <td>`+item.val().dateAdd+`</td>
-                <td class="tb"><center><button type="submit" id="excluir" onClick="excluir()" class="btn btn-danger">Excluir</button></center></td>
+                <td class="tb"><button type="submit" id="excluir" onClick="excluir()" class="btn btn-danger">Excluir</button>  <button type="submit" id="editar" class="btn btn-warning">Editar</button></td>
                 </tr>`;
                 somaTotal+= Number(item.val().amount);
             })
@@ -30,8 +30,10 @@ function RetornarDespesas(){
 }
 
 function excluir(){
-    
-    firebase.database().ref('minhasdespesas/').remove();
+    db.database('minhasdespesas').delete().then(function(){
+        console.log("Documento apagado com sucesso!");
+    }).catch(function(error){
+        console.error("Error removing document: ", error);
+    });
 }
  
-

@@ -9,13 +9,12 @@
         <title>LISTAGEM</title>
 
         <link rel="stylesheet" href="assets/css/estilo.css" type="text/css">
-        <link rel="stylesheet" type="text/css" media="screen" href="main.css" />
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
         <script src="https://www.gstatic.com/firebasejs/5.0.2/firebase.js"></script>
         <script src="assets/js/config.js"></script>
         <script src="assets/js/AppList.js"></script>
         <script src="assets/js/bootstrap.js"></script>
-        <script src="index.js"></script>
 
     </head>
     <body onload="RetornarDespesas()">
@@ -38,37 +37,27 @@
                               <a class="nav-link" href="list.html">List</a>
                             </li>
                             <li class="nav-item">
-                                <button onclick="logout()" class="main-botao-cima">LogOff</button>
+                              <a class="nav-link" href="profile.html">Profile</a>
                             </li>
+                            
                           </ul>
                         </div>
                       </nav>
                       <p class="alert alert-primary" id="somaTotal">Total: R$</p>
                       <div id="divtableresultado">
-                          <table class="table table-bordered" id="tbResultado">
-                            <thead class="thead-dark">
-                              <tr>
-                                <th scope="col">DATA KEY</th>
-                                <th scope="col">DESCRIÇÃO</th>
-                                <th scope="col">VALOR</th>
-                                <th scope="col">DATA</th>
-                                <th scope="col">EXCLUIR</th>
-                              </tr>
-                            </thead>          
-                          </table>
+                        <table class="table table-bordered" id="tbResultado">
+                          <thead class="thead-dark">
+                            <tr>
+                              <th scope="col">DATA KEY</th>
+                              <th scope="col">DESCRIÇÃO</th>
+                              <th scope="col">VALOR</th>
+                              <th scope="col">DATA</th>
+                              <th scope="col">EXCLUIR</th>
+                            </tr>
+                          </thead>          
+                        </table> 
+                      </div>
                     </div>
-      <script src="index.js"></script>
-      <script>
-        // Initialize Firebase
-        var config = {
-            apiKey: "AIzaSyA14ezwT64pUoBbz8oWARlkW9KxRfJhsLw",
-            authDomain: "projetominhasdespesastop-aa329.firebaseapp.com",
-            databaseURL: "https://projetominhasdespesastop-aa329.firebaseio.com",
-            projectId: "projetominhasdespesastop-aa329",
-            storageBucket: "projetominhasdespesastop-aa329.appspot.com",
-            messagingSenderId: "405409795255"
-        };
-        firebase.initializeApp(config);
-        </script>
+                    
     </body>
 </html>
